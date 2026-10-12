@@ -12,3 +12,5 @@
 *.suo
 *.user
 *.tmp
+/Assets/Obligatory Scifi Corridor 01/
+/Assets/Obligatory Scifi Corridor 01.meta
