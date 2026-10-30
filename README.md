@@ -18,6 +18,14 @@ NEON DRIFT is a 3D endless runner made in Unity. You fly a spaceship through a l
 - The longer you survive, the faster the asteroids come.
 - Your score is your survival time. The best time is saved as your high score.
 
+## 🎮 Play the game
+
+1. Go to the [latest release](https://github.com/2159863-sys/NeonDrift/releases/latest).
+2. Download **NeonDrift_Windows.zip**.
+3. Unzip it and double-click **NeonDrift.exe**.
+
+> Windows only. If Windows shows a "Windows protected your PC" warning, click **More info → Run anyway**.
+
 ## Features
 
 - Main menu with ship selection (3 ships) and high score
@@ -49,3 +57,4 @@ NEON DRIFT is a 3D endless runner made in Unity. You fly a spaceship through a l
 ## Author
 
 Shreya Katti – Exam K0788, Basis Programmeren van Games
+
