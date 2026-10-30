@@ -13,7 +13,7 @@ public class AsteroidSpawner : MonoBehaviour
     {
         elapsedTime += Time.deltaTime;
 
-        // Increase the number of asteroids over time
+        // Increase difficulty over time
         if (elapsedTime < 20f)
         {
             spawnInterval = 5f;
@@ -22,9 +22,17 @@ public class AsteroidSpawner : MonoBehaviour
         {
             spawnInterval = 3f;
         }
-        else
+        else if (elapsedTime < 60f)
         {
             spawnInterval = 2f;
+        }
+        else if (elapsedTime < 90f)
+        {
+            spawnInterval = 1.5f;
+        }
+        else
+        {
+            spawnInterval = 1f;
         }
 
         spawnTimer -= Time.deltaTime;
@@ -43,9 +51,16 @@ public class AsteroidSpawner : MonoBehaviour
         float x = Random.Range(-2f, 2f);
         float y = Random.Range(0.5f, 2f);
 
-        Vector3 spawnPosition = new Vector3(x, y, 20f);
+        Vector3 spawnPosition = new Vector3(
+            x,
+            y,
+            20f
+        );
 
-        Instantiate(asteroidPrefab, spawnPosition,
-            Quaternion.identity);
+        Instantiate(
+            asteroidPrefab,
+            spawnPosition,
+            Quaternion.identity
+        );
     }
 }
