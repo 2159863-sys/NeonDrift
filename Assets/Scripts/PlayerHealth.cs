@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
     public int maxLives = 3;
     public float invincibilityTime = 1.5f;
 
+    // Raised each time an asteroid hit actually removes a life (used by NeonDriftAudio)
+    public event System.Action LifeLost;
+
     private float nextDamageTime = 0f;
     private PlayerScore playerScore;
 
@@ -28,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
 
         lives--;
         nextDamageTime = Time.time + invincibilityTime;
+        LifeLost?.Invoke();
 
         if (playerScore != null)
             playerScore.TryUseFullBattery();

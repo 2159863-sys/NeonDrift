@@ -7,6 +7,9 @@ public class PlayerScore : MonoBehaviour
     public int batteryCharge = 0;
     public int orbsPerLife = 3;
 
+    // Raised for every collected energy orb, including the one that fills the bar (used by NeonDriftAudio)
+    public event System.Action EnergyCollected;
+
     private PlayerHealth playerHealth;
 
     void Awake()
@@ -17,6 +20,7 @@ public class PlayerScore : MonoBehaviour
     public void AddPoints(int amount)
     {
         energyPoints += amount;
+        EnergyCollected?.Invoke();
 
         batteryCharge = Mathf.Min(
             batteryCharge + 1,
